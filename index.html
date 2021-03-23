@@ -1,19 +1,67 @@
 <!doctype html>
 
 <head>
+	<title>Universe Search</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 	<meta charset="utf-8">
 	<script>
 		// TODO: create a handler
+		function setSearchEngine() {
+			
+			let engine = document.querySelector("input[name=engine]:checked");
+			let form = document.querySelector("form");
+			let setUrl = "";
+			//Bonus Material
+			let q = document.querySelector("input[name=q]");  //This works
+			let radioEngine = document.getElementsByName("engine");
+			if(q.value === '' || engine === null) {
+				//engine = '';
+				alert("All fields ar required!");
+				for(let i = 0; i < radioEngine.length; i++){
+					radioEngine[i].checked = false;
+				}
+				event.preventDefault();
+			}
+			//End Bonus Material
+			engine = engine.value;
+			let actions = {
+				"google":"https://www.google.com/search",
+				"duckDuckGo":"https://duckduckgo.com/",
+				"bing":"https://www.bing.com/search",
+				"ask":"https://ask.com/web"
+			}
+			setUrl = actions[engine]
+			form.setAttribute("action", setUrl);
+		}
     window.addEventListener("load", function(){
         // TODO: register the handler
+		let form = document.querySelector("form");
+		form.addEventListener('submit', setSearchEngine);
     });
+
 	</script>
 </head>
 
 <body>
 
+	<header>
+		<h1>UNIVERSE SEARCH</h1>
+	</header>
+
 	<form id="searchForm">
     <!-- TODO: add form elements -->
+	<input id = "searchBox" type = "text" name = "q"/><br>
+	<section id = "radio">
+		<input type = "radio" name = "engine" value = "google"/><label>Google</label>
+		<input type = "radio" name = "engine" value = "duckDuckGo"/><label>DuckDuckGo</label>
+		<input type = "radio" name = "engine" value = "bing"/><label>Bing</label>
+		<input type = "radio" name = "engine" value = "ask"/><label>Ask</label><br>
+	</section>
+	<button id = "submit">Go!</button>
 	</form>
+	<footer>
+		Background Courtesy of NASA GPM.
+	</footer>
+
 
 </body>

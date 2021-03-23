@@ -1,0 +1,69 @@
+body, html {
+    height: 100%;
+}
+
+h1 {
+    margin-top: 200px;
+    text-align: center;
+    color: darkred;
+}
+
+#searchBox {
+    margin-top: 50px;
+    margin-left: 700px;
+    width: 500px;
+    height: 50px;
+    border-radius: 25px;
+    border-color: teal;
+    /*padding: 2px;*/
+    text-align: center;
+    font-size: x-large;
+    background-color: inherit;
+}
+
+body {
+    background-image: url('images/GPM-space-default.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 0px;
+    margin: 0px;
+}
+
+/*form {
+    width: auto;
+    height: auto;
+}*/
+
+#submit {
+    margin-left: 900px;
+    margin-top: 50px;
+    width: 150px;
+    height: 50px;
+    border-radius: 25px;
+    border-color: teal;
+    font-size: large;
+    /*font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;*/
+    font-weight: bold;
+    background-blend-mode: screen;
+}
+
+section {
+    margin-top: 50px;
+    margin-left: 800px;
+    font-weight: bolder;
+    font-size: large
+}
+
+button {
+    background-color: transparent;
+}
+
+footer {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 400px;
+}
